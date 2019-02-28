@@ -2,9 +2,7 @@
 package com.iluwatar.callback;
 
 /**
- * 
  * Template-method class for callback hook execution
- * 
  */
 public abstract class Task {
 
@@ -12,10 +10,8 @@ public abstract class Task {
    * Execute with callback
    */
   public final void executeWith(Callback callback) {
-    execute();
-    if (callback != null) {
+      execute();
       callback.call();
-    }
   }
 
   public abstract void execute();
