@@ -9,8 +9,6 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 /**
  * Date: 12/29/15 - 10:50 PM
- *
- * @author Jeroen Meulemeester
  */
 public class DragonSlayerTest {
 
@@ -21,7 +19,6 @@ public class DragonSlayerTest {
   public void testGoToBattle() {
     final DragonSlayingStrategy strategy = mock(DragonSlayingStrategy.class);
     final DragonSlayer dragonSlayer = new DragonSlayer(strategy);
-
     dragonSlayer.goToBattle();
     verify(strategy).execute();
     verifyNoMoreInteractions(strategy);

@@ -17,8 +17,6 @@ public class App {
 
   /**
    * Program entry point
-   * 
-   * @param args command line args
    */
   public static void main(String[] args) {
     MessageQueue queue = new SimpleMessageQueue(10000);
@@ -26,21 +24,13 @@ public class App {
     final Producer producer = new Producer("PRODUCER_1", queue);
     final Consumer consumer = new Consumer("CONSUMER_1", queue);
 
-    new Thread() {
-      @Override
-      public void run() {
-        consumer.consume();
-      }
-    }.start();
+    new Thread(()->consumer.consume()).start();
 
-    new Thread() {
-      @Override
-      public void run() {
-        producer.send("hand shake");
-        producer.send("some very important information");
-        producer.send("bye!");
-        producer.stop();
-      }
-    }.start();
+    new Thread(()->{
+      producer.send("hand shake");
+      producer.send("some very important information");
+      producer.send("bye!");
+      producer.stop();
+    }).start();
   }
 }

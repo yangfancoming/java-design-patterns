@@ -12,7 +12,6 @@ import static org.mockito.Mockito.verify;
 
 /**
  * Test class
- * 
  */
 public class AdapterPatternTest {
 
@@ -46,10 +45,8 @@ public class AdapterPatternTest {
   @Test
   public void testAdapter() {
     Captain captain = (Captain) beans.get(ROWING_BEAN);
-
     // when captain moves
     captain.row();
-
     // the captain internally calls the battleship object to move
     RowingBoat adapter = (RowingBoat) beans.get(FISHING_BEAN);
     verify(adapter).row();

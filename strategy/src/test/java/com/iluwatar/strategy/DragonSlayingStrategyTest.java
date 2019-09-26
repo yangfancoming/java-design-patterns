@@ -30,16 +30,13 @@ public class DragonSlayingStrategyTest {
   static Collection<Object[]> dataProvider() {
     return Arrays.asList(
         new Object[]{
-            new MeleeStrategy(),
-            "With your Excalibur you sever the dragon's head!"
+            new MeleeStrategy(),"With your Excalibur you sever the dragon's head!"
         },
         new Object[]{
-            new ProjectileStrategy(),
-            "You shoot the dragon with the magical crossbow and it falls dead on the ground!"
+            new ProjectileStrategy(),"You shoot the dragon with the magical crossbow and it falls dead on the ground!"
         },
         new Object[]{
-            new SpellStrategy(),
-            "You cast the spell of disintegration and the dragon vaporizes in a pile of dust!"
+            new SpellStrategy(),"You cast the spell of disintegration and the dragon vaporizes in a pile of dust!"
         }
     );
   }
