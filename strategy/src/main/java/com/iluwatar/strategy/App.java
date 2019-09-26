@@ -23,7 +23,6 @@ public class App {
   
   /**
    * Program entry point
-   * 
    * @param args command line args
    */
   public static void main(String[] args) {
@@ -40,16 +39,14 @@ public class App {
 
     // Java 8 Strategy pattern
     LOGGER.info("Green dragon spotted ahead!");
-    dragonSlayer = new DragonSlayer(
-        () -> LOGGER.info("With your Excalibur you severe the dragon's head!"));
+    dragonSlayer = new DragonSlayer(() -> LOGGER.info("With your Excalibur you severe the dragon's head!"));
     dragonSlayer.goToBattle();
     LOGGER.info("Red dragon emerges.");
-    dragonSlayer.changeStrategy(() -> LOGGER.info(
-        "You shoot the dragon with the magical crossbow and it falls dead on the ground!"));
+    dragonSlayer.changeStrategy(() -> LOGGER.info("You shoot the dragon with the magical crossbow and it falls dead on the ground!"));
     dragonSlayer.goToBattle();
     LOGGER.info("Black dragon lands before you.");
-    dragonSlayer.changeStrategy(() -> LOGGER.info(
-        "You cast the spell of disintegration and the dragon vaporizes in a pile of dust!"));
+    dragonSlayer.changeStrategy(() -> LOGGER.info("You cast the spell of disintegration and the dragon vaporizes in a pile of dust!"));
     dragonSlayer.goToBattle();
   }
+
 }
